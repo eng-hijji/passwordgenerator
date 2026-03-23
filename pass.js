@@ -1,10 +1,16 @@
 const but=document.querySelector('.gen');
+const copy=document.querySelector('.copy');
 
 const pass=document.querySelector('.pass');
 but.addEventListener('click',()=>{
 
 pass.innerText=generate();
 
+})
+copy.addEventListener('click',()=>{
+  navigator.clipboard.writeText(pass.innerText).then(()=>{
+    alert('copied')
+  })
 })
 
 function generate(){
@@ -66,3 +72,5 @@ function randomDigit(){
 return Math.floor(Math.random()*10);
 }
 console.log(generate());
+let text=document.querySelector('div').textContent;
+text='hello'
